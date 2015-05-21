@@ -5,7 +5,7 @@ module Doorkeeper
         extend ActiveSupport::Concern
 
         included do
-          field :scopes, type: String
+          field :scopes, type: String, default: Doorkeeper.configuration.default_scopes
         end
 
         def scopes=(value)
